@@ -1,10 +1,10 @@
-import numpy as np
 import os
 
+import numpy as np
 
-FILE_NAME=os.path.join(os.getcwd(), "day06", "data.txt")
+FILE_NAME = os.path.join(os.getcwd(), "day06", "data.txt")
 
-file = open(FILE_NAME, 'r')
+file = open(FILE_NAME, "r")
 
 worksheet = []
 for line in file:
@@ -15,6 +15,6 @@ operations = worksheet[-1]
 
 total_sum = 0
 for i in range(len(numbers)):
-    total_sum += np.prod(numbers[i]) if operations[i] == '*' else np.sum(numbers[i])
+    total_sum += np.prod(numbers[i]) if operations[i] == "*" else np.sum(numbers[i])
 
 print(total_sum)

@@ -1,6 +1,7 @@
-import os, math
+import math
+import os
 
-FILE_NAME=os.path.join(os.getcwd(), "day01", "data.txt")
+FILE_NAME = os.path.join(os.getcwd(), "day01", "data.txt")
 
 file = open(FILE_NAME, "r")
 
@@ -13,16 +14,16 @@ for line in file:
     if direction == "R":
         number_of_zeros += (current_rotation + rotation) // 100
         current_rotation = (current_rotation + rotation) % 100
-        
+
     else:
         if current_rotation == 0:
             current_rotation = 100
-        
+
         new_rotation = current_rotation - rotation
-        
-        if (new_rotation <= 0):
+
+        if new_rotation <= 0:
             number_of_zeros += 1 + math.floor(new_rotation / -100)
-        
+
         current_rotation = (current_rotation - rotation) % 100
 
 file.close()

@@ -1,17 +1,17 @@
 import os
 
-FILE_NAME=os.path.join(os.getcwd(), "day05", "data.txt")
+FILE_NAME = os.path.join(os.getcwd(), "day05", "data.txt")
 
-file = open(FILE_NAME, 'r')
+file = open(FILE_NAME, "r")
 
 ranges = []
 ingredient_ids = []
 for line in file:
-    if '-' in line:
-        left, right = line.strip().split('-')
+    if "-" in line:
+        left, right = line.strip().split("-")
         ranges.append((int(left), int(right)))
 
-    elif line != '\n':
+    elif line != "\n":
         ingredient_ids.append(int(line.strip()))
 
 fresh_ingredients_count = 0
